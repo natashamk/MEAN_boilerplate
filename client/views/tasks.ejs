@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tasks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Task</h2>
+        <% for (var task of data) { %>
+        <h3><%= task.title %></h3>
+        <li><%= task.description %></li>
+        <br>
+        <button type="submit" class="btn btn-default"><a href="/tasks/<%= task.id %>">Update</a></button>
+        <button type="submit" class="btn btn-default"><a href="/delete/<%= task.id %>">Delete</a></button>
+        <% }%>
+        <br><br><br>
+        <button type="submit" class="btn btn-default"><a href="/">Add Task</a></button>        
+    </div>
+</body>
+
+</html>
